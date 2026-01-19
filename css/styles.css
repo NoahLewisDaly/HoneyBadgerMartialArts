@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 html, body {
@@ -12,14 +13,19 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5; /* light gray background */
-  color: #2E2E2E; /* dark gray text */
+  background-color: #0b0d10;
+  color: #f5f5f5;
 }
 
 main {
   flex: 1;
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
 }
 
 /* ---------------- Header & Logo ---------------- */
@@ -71,35 +77,61 @@ nav a:hover {
 
 /* ---------------- Hero Section ---------------- */
 .hero {
-  background: url('../images/gym-hero.jpg') center/cover no-repeat;
-  color: #fff;
+  min-height: 100vh;
+  background: url('../images/TeamHuddle.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   text-align: center;
-  padding: 6rem 2rem;
-  text-shadow: 1px 1px 5px #000; /* subtle shadow for readability */
+  color: #fff;
+}
+
+.hero-overlay {
+  max-width: 700px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.hero h2,
+.hero p,
+.hero .cta {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem;
+  color: #ddd;
 }
 
 .hero .cta {
-  background-color: #0099FF; /* primary blue */
-  color: #fff;
-  padding: 0.8rem 2rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  background: #e10600;
+  border-radius: 999px;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .hero .cta:hover {
-  background-color: #66CCFF; /* bright blue hover */
+  background: #ff1f1f;
+  transform: scale(1.08);
 }
 
 /* ---------------- Weekly Schedule Table ---------------- */
@@ -137,15 +169,6 @@ td[rowspan] {
   font-weight: bold;
 }
 
-/* ---------------- Footer ---------------- */
-footer {
-  background-color: #2E2E2E;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 4rem;
-  font-size: 0.9rem;
-}
 
 /* ---------------- Responsive Styles ---------------- */
 @media (max-width: 768px) {
@@ -189,6 +212,10 @@ footer {
     font-size: 1rem;
   }
 
+  .hero-overlay {
+    gap: 1rem;
+  }
+
   /* Table adjustments */
   table {
     font-size: 0.9rem;
@@ -197,7 +224,7 @@ footer {
 
 /* ---------------- Footer ---------------- */
 footer {
-  background-color: #2E2E2E; /* match header */
+  background-color: #2E2E2E;
   color: #fff;
   text-align: center;
   padding: 2rem 1rem;
@@ -261,4 +288,44 @@ footer {
   .footer-socials {
     margin-top: 1rem;
   }
+}
+
+
+/* ---------------- Disciplines Page ---------------- */
+
+.disciplines {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #0b0d10;
+  color: #fff;
+}
+
+.disciplines h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+}
+
+.discipline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.discipline-card {
+  background: #141821;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.discipline-card:hover {
+  transform: translateY(-10px);
+}
+
+.discipline-card h2 {
+  color: #e10600;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
