@@ -122,7 +122,7 @@ nav a:hover {
 }
 
 .hero .cta {
-  background: #e10600;
+  background: #0099FF;
   border-radius: 999px;
   padding: 1rem 2.5rem;
   font-size: 1rem;
@@ -130,44 +130,54 @@ nav a:hover {
 }
 
 .hero .cta:hover {
-  background: #ff1f1f;
+  background: #0099EE;
   transform: scale(1.08);
 }
 
 /* ---------------- Weekly Schedule Table ---------------- */
+/* Table container */
 table {
   width: 100%;
   max-width: 800px;
   margin: 2rem auto;
   border-collapse: collapse;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  background-color: #fff;
+  background-color: #1e1f24; /* dark gray/black background */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 
-th, td {
-  padding: 1rem;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-
+/* Table header */
 th {
-  background-color: #2E2E2E; /* dark gray */
+  background-color: #2E2E2E; /* keep it dark gray */
   color: #fff;
   font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Table rows */
+td {
+  padding: 1rem;
+  text-align: center;
+  color: #f5f5f5; /* light text for contrast */
+  border-bottom: 1px solid #3a3a3a; /* subtle divider */
+}
+
+/* Alternating row colors */
 tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* light gray */
+  background-color: #25262a; /* slightly lighter than main table */
 }
 
 tbody tr:hover {
-  background-color: #ffefdc; /* subtle highlight on hover */
+  background-color: #333; /* subtle highlight on hover */
 }
 
+/* Day column */
 td[rowspan] {
-  background-color: #eee; /* distinguish day cells */
+  background-color: #2E2E2E;
   font-weight: bold;
+  color: #fff;
 }
+
 
 
 /* ---------------- Responsive Styles ---------------- */
