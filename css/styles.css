@@ -1,0 +1,264 @@
+/* ---------------- Reset & Base Styles ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5; /* light gray background */
+  color: #2E2E2E; /* dark gray text */
+}
+
+main {
+  flex: 1;
+}
+
+/* ---------------- Header & Logo ---------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2E2E2E; /* dark gray */
+  padding: 1rem 2rem;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  height: 50px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  color: #FFFFFF;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #66CCFF; /* bright blue accent */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ---------------- Hero Section ---------------- */
+.hero {
+  background: url('../images/gym-hero.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+  text-shadow: 1px 1px 5px #000; /* subtle shadow for readability */
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .cta {
+  background-color: #0099FF; /* primary blue */
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta:hover {
+  background-color: #66CCFF; /* bright blue hover */
+}
+
+/* ---------------- Weekly Schedule Table ---------------- */
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #2E2E2E; /* dark gray */
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* light gray */
+}
+
+tbody tr:hover {
+  background-color: #ffefdc; /* subtle highlight on hover */
+}
+
+td[rowspan] {
+  background-color: #eee; /* distinguish day cells */
+  font-weight: bold;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  background-color: #2E2E2E;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+
+/* ---------------- Responsive Styles ---------------- */
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+
+  nav {
+    display: none; /* hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background-color: #2E2E2E;
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+
+  /* Hero adjustments */
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Table adjustments */
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  background-color: #2E2E2E; /* match header */
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  margin: 1rem 0;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a.active {
+  color: #66CCFF; /* bright blue accent */
+}
+
+.footer-socials {
+  margin-top: 0.5rem;
+}
+
+.footer-socials a {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.footer-socials img {
+  width: 28px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.footer-socials img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a {
+    margin: 0;
+  }
+
+  .footer-socials {
+    margin-top: 1rem;
+  }
+}
