@@ -194,12 +194,16 @@ nav a:hover {
 /* ---------------- Weekly Schedule Table ---------------- */
 table {
   width: 100%;
-  max-width: 800px;
+  max-width: 75vw;
   margin: 2rem auto;
-  border-collapse: collapse;
+  border-collapse: separate; /* not collapse */
+  border-spacing: 0;         /* remove gaps */
   background-color: #1e1f24;
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  border-radius: 14px;       /* <-- rounded corners */
+  overflow: hidden;         /* <-- clips inner cells */
 }
+
 
 th {
   background-color: #2E2E2E;
