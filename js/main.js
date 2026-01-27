@@ -4,13 +4,12 @@ fetch('header.html')
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
 
-    // Add hamburger toggle after header loads
     const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+    const header = document.querySelector('header');
 
-    if (hamburger && navMenu) {
+    if (hamburger && header) {
       hamburger.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        header.classList.toggle('menu-open');
       });
     }
   })

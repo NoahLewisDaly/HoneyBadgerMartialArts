@@ -123,7 +123,7 @@ nav a:hover {
   color: #cbd5e1;
 }
 
-.hero h2 {
+.hero h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -136,11 +136,15 @@ nav a:hover {
 }
 
 .hero .cta {
-  background: #0099FF;
+  background: transparent;
   border-radius: 999px;
+  border: solid 5px #0099EE;
   padding: 1rem 2.5rem;
   font-size: 1rem;
   transition: all 0.3s ease;
+  width: 50%;
+  display: block;
+  margin: auto;
 }
 
 .hero .cta:hover {
@@ -160,7 +164,11 @@ nav a:hover {
   text-align: center;
 }
 
-.about h3 {
+.about-container p {
+  font-size: 1.2rem;
+}
+
+.about h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 2.2rem;
   margin-bottom: 1rem;
@@ -181,12 +189,13 @@ nav a:hover {
 
 .about-card {
   background: #1c1c1c;
-  padding: 2rem;
+  padding: 0.5rem;
   border-radius: 12px;
+  font-size: 1.1rem;
 }
 
 .about-card h4 {
-  margin-bottom: 0.5rem;
+  margin: 0.75rem;
   color: #0099FF; /* accent */
 }
 
@@ -343,32 +352,53 @@ footer {
 /* ---------------- Responsive Styles ---------------- */
 @media (max-width: 768px) {
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;               /* normal header height */
+    background-color: #2E2E2E;
+    padding: 0 1rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    z-index: 1000;
+  }
+
+  header .logo {
+    height: 80px;
   }
 
   nav {
-    display: none; /* hidden by default on mobile */
+    display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: #2E2E2E;
-    margin-top: 0.5rem;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  header.menu-open nav {
+    display: flex;
   }
 
   nav a {
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
   }
 
   .hamburger {
-    display: block; /* show hamburger on mobile */
+    display: block;
+    font-size: 2rem;
   }
 
-  nav.active {
-    display: flex;
+  header.menu-open {
+    height: 100vh;
+    background-color: #0b0d10;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
   }
+
+
 
   .hero h2 {
     font-size: 2rem;
