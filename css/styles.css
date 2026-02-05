@@ -41,7 +41,6 @@ header {
   background-color: transparent;
   color: #fff;
   z-index: 1000;
-  /* backdrop-filter: blur(4px);  optional blur effect */
 }
 
 header .logo {
@@ -82,7 +81,6 @@ nav a:hover {
 .home main {
   padding-top: 0;
 }
-
 
 /* ---------------- Hero Section ---------------- */
 .hero {
@@ -199,20 +197,18 @@ nav a:hover {
   color: #0099FF; /* accent */
 }
 
-
 /* ---------------- Weekly Schedule Table ---------------- */
 table {
   width: 100%;
   max-width: 75vw;
   margin: 2rem auto;
-  border-collapse: separate; /* not collapse */
-  border-spacing: 0;         /* remove gaps */
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: #1e1f24;
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-  border-radius: 14px;       /* <-- rounded corners */
-  overflow: hidden;         /* <-- clips inner cells */
+  border-radius: 14px;
+  overflow: hidden;
 }
-
 
 th {
   background-color: #2E2E2E;
@@ -353,11 +349,9 @@ footer {
 @media (max-width: 768px) {
   header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 64px;               /* normal header height */
-    background-color: #2E2E2E;
+    inset: 0 0 auto 0;
+    height: 64px;
+    background-color: transparent; /* FIXED */
     padding: 0 1rem;
     flex-direction: row;
     justify-content: space-between;
@@ -366,7 +360,9 @@ footer {
   }
 
   header .logo {
-    height: 80px;
+    height: 40px;              /* FIXED */
+    max-height: 100%;
+    width: auto;
   }
 
   nav {
@@ -398,8 +394,6 @@ footer {
     padding: 2rem;
   }
 
-
-
   .hero h2 {
     font-size: 2rem;
   }
@@ -428,5 +422,23 @@ footer {
 
   .footer-socials {
     margin-top: 1rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 1.5rem 1.25rem;
+    font-size: 1.15rem;
+  }
+
+  .about-card h4 {
+    font-size: 1.4rem;
+  }
+
+  .about-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 }
