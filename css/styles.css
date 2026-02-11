@@ -19,6 +19,11 @@ body {
   color: #f5f5f5;
 }
 
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
 main {
   flex: 1;
 }
@@ -72,6 +77,10 @@ nav a:hover {
   color: #fff;
 }
 
+.hamburger:hover {
+  color: #66CCFF;
+}
+
 /* Default: inner pages get space for header */
 .inner main {
   padding-top: 110px; /* match your header height */
@@ -85,7 +94,7 @@ nav a:hover {
 /* ---------------- Hero Section ---------------- */
 .hero {
   position: relative;
-  min-height: 75vh;
+  min-height: 80vh;
   background: url('../images/TeamHuddle2.jpg') top center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -198,6 +207,19 @@ nav a:hover {
 }
 
 /* ---------------- Weekly Schedule Table ---------------- */
+.schedule {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #0b0d10;
+  color: #fff;
+}
+
+.schedule h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+}
+
 table {
   width: 100%;
   max-width: 75vw;
@@ -216,6 +238,8 @@ th {
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 1rem 1rem;
+  font-size: 1rem;
 }
 
 td {
@@ -257,6 +281,8 @@ td[rowspan] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .discipline-card {
@@ -350,8 +376,8 @@ footer {
   header {
     position: fixed;
     inset: 0 0 auto 0;
-    height: 64px;
-    background-color: transparent; /* FIXED */
+    height: 65px;
+    background-color: transparent;
     padding: 0 1rem;
     flex-direction: row;
     justify-content: space-between;
@@ -360,9 +386,10 @@ footer {
   }
 
   header .logo {
-    height: 40px;              /* FIXED */
+    height: 45px;
     max-height: 100%;
     width: auto;
+    margin-top: 20px;
   }
 
   nav {
@@ -386,12 +413,17 @@ footer {
   }
 
   header.menu-open {
+    position: fixed;
+    inset: 0;
     height: 100vh;
+    width: 100vw;
     background-color: #0b0d10;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding: 2rem;
+    z-index: 9999;
   }
 
   .hero h2 {
@@ -408,6 +440,7 @@ footer {
 
   table {
     font-size: 0.9rem;
+    max-width: 100vw;
   }
 
   .footer-nav {

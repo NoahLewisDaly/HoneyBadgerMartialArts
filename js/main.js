@@ -10,6 +10,7 @@ fetch('header.html')
     if (hamburger && header) {
       hamburger.addEventListener('click', () => {
         header.classList.toggle('menu-open');
+        document.body.classList.toggle('menu-open'); // 👈 ADD THIS
       });
     }
   })
