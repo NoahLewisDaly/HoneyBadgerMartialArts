@@ -156,8 +156,26 @@ nav a:hover {
 
 .hero .cta:hover {
   background: #0099EE;
+  opacity: 75%;
   transform: scale(1.08);
 }
+
+.hero-phone {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero-phone a {
+  color: #66CCFF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-phone a:hover {
+  text-decoration: underline;
+}
+
 
 .about {
   background: #111;
@@ -222,7 +240,6 @@ nav a:hover {
 
 table {
   width: 100%;
-  max-width: 75vw;
   margin: 2rem auto;
   border-collapse: separate;
   border-spacing: 0;
@@ -231,6 +248,7 @@ table {
   border-radius: 14px;
   overflow: hidden;
 }
+
 
 th {
   background-color: #2E2E2E;
@@ -371,6 +389,17 @@ footer {
   transform: scale(1.1);
 }
 
+.contact-link {
+  color: #66CCFF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+
 /* ---------------- Responsive Styles ---------------- */
 @media (max-width: 768px) {
   header {
@@ -438,9 +467,15 @@ footer {
     gap: 1rem;
   }
 
+  .schedule {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   table {
     font-size: 0.9rem;
-    max-width: 100vw;
+    width: 100%;
+    margin: 1.5rem 0;
   }
 
   .footer-nav {
@@ -456,6 +491,7 @@ footer {
   .footer-socials {
     margin-top: 1rem;
   }
+
 
   .about-grid {
     grid-template-columns: 1fr;
